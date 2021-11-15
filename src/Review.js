@@ -11,15 +11,31 @@ const Review = () => {
   const nextReview = () => {
     setIndex((index) => {
       let newIndex = index+1
-      return newIndex
-
+    
+     return changeNumber(newIndex)
     })
   }
   const prevReview = () => {
     setIndex((index) => {
        let newIndex = index - 1
-       return newIndex
+       return changeNumber(newIndex)
     })
+  }
+   const ranNumber = () => {
+    const ranIndex = Math.floor(Math.random()*people.length)
+    setIndex(() => {
+      return ranIndex
+    })
+  }
+
+  const changeNumber = (index) => {
+    if(index < 0){
+       return index = people.length - 1
+    }
+    if(index > people.length -1){
+      return index = 0
+    }
+    return index
   }
 
 
@@ -34,7 +50,7 @@ const Review = () => {
     <p className = "info">{text}</p>
     <button className ="prev-btn" onClick = {prevReview}><FaChevronLeft/></button>
     <button className ="next-btn"  onClick = {nextReview}><FaChevronRight/></button>
-    <button className ="random-btn">random</button>
+    <button className ="random-btn" onClick = {ranNumber}>random</button>
     
   </div>
   </div>

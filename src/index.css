@@ -194,10 +194,10 @@ main {
   height: 2.5rem;
   display: grid;
   place-items: center;
-  border-radius: 50%;
+  /* border-radius: 50%; */
   transform: translateY(25%);
-  background: var(--clr-primary-5);
-  color: var(--clr-white);
+  /* background: var(--clr-primary-5); */
+  color: var(--clr-primary-4);
 }
 .img-container::before {
   content: "";
